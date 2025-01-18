@@ -13,7 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadComponent: () => import('./dashboard/dashboard.component').then((m) => m.DashboardComponent)
+        loadComponent: () => import('./dashboard/dashboard.component').then((m) => m.DashboardComponent),
       }
     ]
   }
