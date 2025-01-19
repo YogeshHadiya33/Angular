@@ -4,7 +4,6 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { SignInRequest } from '../../business_logic/models/signin.model';
 import { AuthService } from '../../business_logic/services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
 import { LocalStorageService } from '../../business_logic/services/localstorage.service';
 import { TOKEN_LOCAL_STORAGE_KEY, USER_DETAILS_LOCAL_STORAGE_KEY } from '../../shared/constants';
 
@@ -14,8 +13,7 @@ import { TOKEN_LOCAL_STORAGE_KEY, USER_DETAILS_LOCAL_STORAGE_KEY } from '../../s
   imports: [
     RouterModule,
     CommonModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [AuthService, LocalStorageService],
   templateUrl: './sign-in.component.html',
@@ -53,8 +51,8 @@ export class SignInComponent {
           this.errorMessage = null;
           // if (this.signInForm.value.saveDetails) {
           // }
-            this.localStorageService.setItem(TOKEN_LOCAL_STORAGE_KEY, response.token);
-            this.localStorageService.setItem(USER_DETAILS_LOCAL_STORAGE_KEY, response.userDetails);
+          this.localStorageService.setItem(TOKEN_LOCAL_STORAGE_KEY, response.token);
+          this.localStorageService.setItem(USER_DETAILS_LOCAL_STORAGE_KEY, response.userDetails);
           this.router.navigate(['/dashboard']);
         },
         error: error => {

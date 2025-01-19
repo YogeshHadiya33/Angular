@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { GuestComponent } from './layout/guest/guest.component';
 import { AdminComponent } from './layout/admin/admin.component';
-import { AuthGuard } from './authentication/guard/auth.guard';
+import { AuthGuard } from './business_logic/guard/auth.guard';
 
 export const routes: Routes = [
 

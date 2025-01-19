@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <h2 class="">Todo List</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <button class="btn btn-primary" (click)="onAdd()">Add Todo</button>
+    </div>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Completed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="todos.length === 0">
+          <td colspan="5" class="text-center">No data available</td>
+        </tr>
+        <tr *ngFor="let todo of todos; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.description }}</td>
+          <td>
+            <button class="btn btn-sm" [ngClass]="todo.isCompleted ? 'btn-warning' : 'btn-success'" (click)="onToggleComplete(todo)">
+              {{ todo.isCompleted ? 'Mark as Incomplete' : 'Mark as Complete' }}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-info" (click)="onEdit(todo)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="onDelete(todo.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -30,6 +30,14 @@ const NavigationItems = [
     icon: 'feather icon-home',
     classes: 'nav-item'
   },
+  {
+    id: 'todo',
+    title: 'Todo',
+    type: 'item',
+    url: '/todo',
+    icon: 'feather icon-box',
+    classes: 'nav-item'
+  },
   // {
   //   id: 'navigation',
   //   title: 'Navigation',

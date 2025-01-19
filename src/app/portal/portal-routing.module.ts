@@ -15,6 +15,11 @@ const routes: Routes = [
         path: 'dashboard',
         loadComponent: () => import('./dashboard/dashboard.component').then((m) => m.DashboardComponent),
       }
+      ,
+      {
+        path: 'todo',
+        loadComponent: () => import('./todo-list/todo-list.component').then((m) => m.TodoListComponent),
+      }
     ]
   }
 ];
