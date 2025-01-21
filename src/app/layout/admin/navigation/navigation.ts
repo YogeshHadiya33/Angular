@@ -32,28 +32,44 @@ const NavigationItems = [
   },
   {
     id: 'todo',
-    title: 'Todo',
+    title: 'Todo (With Auth)',
     type: 'item',
     url: '/todo',
     icon: 'feather icon-box',
     classes: 'nav-item'
   },
-  // {
-  //   id: 'navigation',
-  //   title: 'Navigation',
-  //   type: 'group',
-  //   icon: 'icon-navigation',
-  //   children: [
-  //     {
-  //       id: 'dashboard',
-  //       title: 'Dashboard',
-  //       type: 'item',
-  //       url: '/dashboard',
-  //       icon: 'feather icon-home',
-  //       classes: 'nav-item'
-  //     }
-  //   ]
-  // },
+  {
+    id: 'learning',
+    title: 'Learning',
+    type: 'group',
+    icon: 'icon-navigation',
+    children: [
+      {
+        id: 'ParentChild',
+        title: 'Parent Child',
+        type: 'item',
+        url: '/parent-child',
+        icon: 'feather icon-home',
+        classes: 'nav-item'
+      },
+      {
+        id: 'Pipes',
+        title: 'Pipes',
+        type: 'item',
+        url: '/pipes',
+        icon: 'feather icon-home',
+        classes: 'nav-item'
+      },
+      {
+        id: 'Directives',
+        title: 'Directives',
+        type: 'item',
+        url: '/directives',
+        icon: 'feather icon-home',
+        classes: 'nav-item'
+      }
+    ]
+  },
   // {
   //   id: 'ui-element',
   //   title: 'UI ELEMENT',

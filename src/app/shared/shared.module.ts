@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonService } from '../business_logic/services/common.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 
@@ -16,7 +14,6 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule,
   ],
   exports: [
     CommonModule,
@@ -26,8 +23,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
   ],
   providers: [
     CommonService,
-    HttpClientModule,
-    ToastrService,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }]
+    ToastrService
+  ]
 })
 export class SharedModule { }

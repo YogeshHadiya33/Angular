@@ -20,9 +20,7 @@ import { TOKEN_LOCAL_STORAGE_KEY, USER_DETAILS_LOCAL_STORAGE_KEY } from '../../s
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-
-  tokenLocalStorageKey = 'local_storage_user_token';
-  userDetailsLocalStorageKey = 'local_storage_user_details';
+ 
   signInForm: FormGroup;
   errorMessage: string | null = null;
   isSubmitted = false;

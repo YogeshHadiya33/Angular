@@ -16,37 +16,27 @@ export class TodoService {
 
     // Get all todos
     getAllTodos(): Observable<TodoList[]> {
-        return this.http.get<TodoList[]>(TODOS_BASE_URL).pipe(
-            catchError(this.commonService.handleError)
-        );
+        return this.http.get<TodoList[]>(TODOS_BASE_URL);
     }
 
     // Get todo by id
     getTodoById(id: number): Observable<TodoList> {
-        return this.http.get<TodoList>(`${TODOS_BASE_URL}/${id}`).pipe(
-            catchError(this.commonService.handleError)
-        );
+        return this.http.get<TodoList>(`${TODOS_BASE_URL}/${id}`);
     }
 
     // Create a new todo
     createTodo(todo: CreateTodo): Observable<TodoList> {
-        return this.http.post<TodoList>(TODOS_BASE_URL, todo).pipe(
-            catchError(this.commonService.handleError)
-        );
+        return this.http.post<TodoList>(TODOS_BASE_URL, todo);
     }
 
     // Update a todo
     updateTodo(id: number, todo: UpdateTodo): Observable<TodoList> {
-        return this.http.patch<TodoList>(`${TODOS_BASE_URL}/${id}`, todo).pipe(
-            catchError(this.commonService.handleError)
-        );
+        return this.http.patch<TodoList>(`${TODOS_BASE_URL}/${id}`, todo);
     }
 
     // Delete a todo
     deleteTodo(id: number): Observable<void> {
-        return this.http.delete<void>(`${TODOS_BASE_URL}/${id}`).pipe(
-            catchError(this.commonService.handleError)
-        );
+        return this.http.delete<void>(`${TODOS_BASE_URL}/${id}`);
     }
 
 }

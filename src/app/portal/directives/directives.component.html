@@ -1,0 +1,41 @@
+
+<h3>Structural Directives</h3>
+
+<b>NgIf</b>
+<p *ngIf="isLoggedIn">Welcome, user!</p>
+<p *ngIf="!isLoggedIn">Please log in.</p>
+
+<br><br>
+<b>NgFor</b>
+<ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+
+  <br><br>
+  <b>NgFor</b>
+  <div [ngSwitch]="role">
+    <p *ngSwitchCase="'admin'">Admin</p>
+    <p *ngSwitchCase="'user'">User</p>
+    <p *ngSwitchDefault>Guest</p>
+  </div>
+
+
+  <br><br>
+<h3>Attribute  Directives</h3>
+
+<h5 [ngClass]="{ 'text-success': isSuccess, 'text-danger': !isSuccess }">
+    Dynamic Classes
+  </h5>
+  <br><br>
+  <h5 [ngStyle]="{ 'font-size': fontSize + 'px', 'color': fontColor }">
+    Dynamic Styles
+  </h5>
+  
+  <br><br>
+<h3>Custom  Directives</h3>
+
+<h5 hoverHighlight  >This is an example of Custom Attribute Directive which change bg color on hover with default color</h5>
+<h5 hoverHighlight hoverHighlightColor="green">This is an example of Custom Attribute Directive which change bg color on hover with custom color </h5>
+  
+  
+<h5 *appIfAuthenticated="isSuccess">This is example of custom directive which shows based on condition</h5>

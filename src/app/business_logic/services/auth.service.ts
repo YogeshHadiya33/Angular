@@ -17,14 +17,10 @@ export class AuthService {
   ) { }
 
   signIn(request: SignInRequest): Observable<SignInResponse> {
-    return this.http.post<SignInResponse>(SIGN_IN_URL, request).pipe(
-      catchError(this.commonService.handleError)
-    );
+    return this.http.post<SignInResponse>(SIGN_IN_URL, request);
   }
 
   signUp(request: SignUpRequest): Observable<SignUpResponse> {
-    return this.http.post<SignUpResponse>(SIGN_UP_URL, request).pipe(
-      catchError(this.commonService.handleError)
-    );
+    return this.http.post<SignUpResponse>(SIGN_UP_URL, request);
   }
 }

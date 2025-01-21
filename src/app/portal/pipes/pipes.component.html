@@ -1,0 +1,121 @@
+<!-- Refer: https://v17.angular.io/api/common/CurrencyPipe -->
+<h4>Currency Pipe</h4>
+
+<!-- Displaying the original currency value -->
+<b>Currency: {{ currencyValue }}</b><br>
+
+<!-- Displaying currency value in the default currency format (usually USD) -->
+<b>Currency: {{ currencyValue | currency }}</b><br>
+
+<!-- Displaying currency value in Indian Rupees (INR) -->
+<b>Currency: {{ currencyValue | currency : 'INR' }}</b><br>
+
+<!-- Displaying currency value in Euros (EUR) with a narrow symbol and a format of 10 digits before the decimal and 2 digits after the decimal -->
+<b>Currency: {{ currencyValue | currency : 'EUR':'symbol-narrow':'10.2' }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/DatePipe -->
+<h4>Date Pipes</h4>
+
+<!-- Displaying the original date value -->
+<b>Current Date: {{ currentDate }}</b><br>
+
+<!-- Displaying the date in the default format -->
+<b>Current Date: {{ currentDate | date }}</b><br>
+
+<!-- Displaying the date in full date format -->
+<b>Current Date: {{ currentDate | date:'fullDate' }}</b><br>
+
+<!-- Displaying the date in short format -->
+<b>Current Date: {{ currentDate | date:'short' }}</b><br>
+
+<!-- Displaying the date in custom format MM/dd/yyyy -->
+<b>Current Date: {{ currentDate | date:'MM/dd/yyyy' }}</b><br>
+
+<!-- Displaying the time in custom format hh:mm:ss a -->
+<b>Current Date: {{ currentDate | date:'hh:mm:ss a' }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/JsonPipe -->
+<h4>Json Pipes</h4>
+
+<!-- Displaying the original JSON object -->
+<b>Json Value : {{ jsonObject }}</b><br>
+
+<!-- Displaying the JSON object in a formatted string using the json pipe -->
+<b>Json Value : {{ jsonObject | json }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/UpperCasePipe -->
+<!-- Refer: https://v17.angular.io/api/common/LowerCasePipe -->
+<!-- Refer: https://v17.angular.io/api/common/TitleCasePipe -->
+<h4>Case</h4>
+
+<!-- Displaying the original string value -->
+<b>Original : {{ normalStringValue }}</b><br>
+
+<!-- Converting the string to uppercase using the uppercase pipe -->
+<b>Upper Case : {{ normalStringValue | uppercase }}</b><br>
+
+<!-- Converting the string to lowercase using the lowercase pipe -->
+<b>Lower Case : {{ normalStringValue | lowercase }}</b><br>
+
+<!-- Converting the string to title case using the titlecase pipe -->
+<b>Title Case : {{ normalStringValue | titlecase }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/PercentPipe -->
+<h4>Percentage Pipe</h4>
+
+<!-- Displaying the original percentage value -->
+<b>Original : {{ percentage }}</b><br>
+
+<!-- Converting the number to a percentage using the percent pipe -->
+<b>Percentage : {{ percentage | percent }}</b><br>
+
+<!-- Converting the number to a percentage with a custom format using the percent pipe -->
+<b>Percentage : {{ percentage | percent:'1.2-2' }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/SlicePipe -->
+<h4>Slice Pipe</h4>
+
+<!-- Displaying the original array value -->
+<b>Original : {{ arrayValue }}</b><br>
+
+<!-- Slicing the string from index 5 to 15 using the slice pipe -->
+<b>Slice String : {{ normalStringValue | slice:5:15 }}</b><br>
+
+<!-- Slicing the array from index 2 to 5 using the slice pipe -->
+<b>Slice Array : {{ arrayValue | slice:2:5 }}</b><br>
+
+<br><br>
+
+<!-- Refer: https://v17.angular.io/api/common/AsyncPipe -->
+<h4>Async Pipe</h4>
+
+<!-- Displaying the original observable -->
+<b>Original Observable: {{ myObservable$ }}</b><br>
+
+<!-- Subscribing to the observable and displaying its value using the async pipe -->
+<b>Async Observable: {{ myObservable$ | async }}</b><br>
+
+<!-- Displaying the original promise -->
+<b>Original Promise: {{ myPromise$ }}</b><br>
+
+<!-- Resolving the promise and displaying its value using the async pipe -->
+<b>Async Promise: {{ myPromise$ | async }}</b><br>
+
+<br>
+<!-- Chaining multiple pipes -->
+<b>Multiple Pipes : {{ normalStringValue | slice:5:15 | uppercase  }}</b><br>
+
+<br><br>
+<h4>Custom Pipe</h4>
+<b>Original : {{ normalStringValue }}</b><br>
+<b>Custom Pipe (Upper case) : {{ normalStringValue | custompipe }}</b><br>

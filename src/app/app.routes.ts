@@ -11,8 +11,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: () => import('./portal/portal.module').then((x) => x.PortalModule),
-                canActivate: [AuthGuard]
+                loadChildren: () => import('./portal/portal.module').then((x) => x.PortalModule)
             }
         ]
     },

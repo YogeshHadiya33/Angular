@@ -1,0 +1,11 @@
+
+
+<h1>Child Component</h1>
+<br>
+<p> Message from parent: {{message}}</p>
+
+<br>
+
+<input type="text" [(ngModel)]="messageFromChild" (keyup)="sendMessageToParent()" placeholder="Enter message to show on parent component" class="form-control" style="width: 50%;"> 
+
+<!-- <button class="btn btn-primary text-white mt-1" (click)="sendMessageToParent()">Send Message to Parent</button> -->

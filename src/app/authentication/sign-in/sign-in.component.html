@@ -15,29 +15,33 @@
         <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
           <div class="input-group mb-3">
             <input type="email" class="form-control" placeholder="Email" formControlName="email" autocomplete="off" />
+          </div>
             <div *ngIf="signInForm.get('email')?.invalid && isSubmitted" class="text-danger">
               <small *ngIf="signInForm.get('email')?.errors?.['required']">Email is required.</small>
               <small *ngIf="signInForm.get('email')?.errors?.['email']">Invalid email address.</small>
-            </div>
           </div>
           <div class="input-group mt-4">
             <input type="password" class="form-control" placeholder="Password" formControlName="password" autocomplete="off" />
+          </div>
             <div *ngIf="signInForm.get('password')?.invalid && isSubmitted" class="text-danger">
               <small *ngIf="signInForm.get('password')?.errors?.['required']">Password is required.</small>
             </div>
-          </div>
           <!-- <div class="form-group text-start mt-4">
             <div class="checkbox checkbox-fill d-inline">
               <input type="checkbox" id="checkbox-fill-a1" formControlName="saveDetails" />
               <label for="checkbox-fill-a1" class="cr">Save Details</label>
             </div>
           </div> -->
-          <button type="submit" class="btn btn-primary mt-4">Login</button>
+          <button type="submit" class="btn btn-primary text-white mt-4">Sign In</button>
         </form>
         <b *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</b>
         <p class="mb-0 text-muted mt-2">
           Don’t have an account?
           <a [routerLink]="['/auth/sign-up']">Sign up</a>
+        </p>
+        <p class="mb-0 text-muted mt-2">
+          Don't want to create account?
+          <a [routerLink]="['/dashboard']">Sign In As Guest</a>
         </p>
       </div>
     </div>

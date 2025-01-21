@@ -46,13 +46,13 @@
             <small *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required.</small>
             <small *ngIf="signUpForm.get('confirmPassword')?.errors?.['mismatch']">Passwords must match.</small>
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Sign up</button>
+          <button type="submit" class="btn btn-primary mt-3 text-white">Sign up</button>
         </form>
         <b *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</b>
         <b *ngIf="successMessage" class="text-success mt-2">{{successMessage }}</b>
         <p class="mb-0 text-muted mt-2">
           Already have an account?
-          <a [routerLink]="['/auth/sign-in']">Log in</a>
+          <a [routerLink]="['/auth/sign-in']">Sign in</a>
         </p>
       </div>
     </div>

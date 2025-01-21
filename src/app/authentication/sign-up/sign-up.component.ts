@@ -4,7 +4,6 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractContro
 import { Router, RouterModule } from '@angular/router';
 import { SignUpRequest } from '../../business_logic/models/signup.model';
 import { AuthService } from '../../business_logic/services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
   ],
   providers: [AuthService],
   templateUrl: './sign-up.component.html',
