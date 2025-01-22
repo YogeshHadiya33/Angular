@@ -32,6 +32,14 @@ const routes: Routes = [
       {
         path: 'directives',
         loadComponent: () => import('./directives/directives.component').then((m) => m.DirectivesComponent),
+      },
+      {
+        path: 'signals',
+        loadComponent: () => import('./signals/signals.component').then((m) => m.SignalsComponent),
+      },
+      {
+        path: "**",
+        loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent)
       }
     ]
   }

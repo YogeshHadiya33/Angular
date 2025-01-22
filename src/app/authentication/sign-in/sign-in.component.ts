@@ -51,7 +51,7 @@ export class SignInComponent {
           // }
           this.localStorageService.setItem(TOKEN_LOCAL_STORAGE_KEY, response.token);
           this.localStorageService.setItem(USER_DETAILS_LOCAL_STORAGE_KEY, response.userDetails);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/admin/dashboard']);
         },
         error: error => {
           console.error(error);

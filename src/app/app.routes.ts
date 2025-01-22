@@ -6,7 +6,7 @@ import { AuthGuard } from './business_logic/guard/auth.guard';
 export const routes: Routes = [
 
     {
-        path: '',
+        path: 'admin',
         component: AdminComponent,
         children: [
             {
@@ -24,5 +24,9 @@ export const routes: Routes = [
                 loadChildren: () => import('./authentication/authentication.module').then((x) => x.AuthenticationModule),
             }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: 'auth/sign-in'
     }
 ];

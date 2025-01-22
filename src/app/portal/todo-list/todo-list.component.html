@@ -14,10 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngIf="todos.length === 0">
+        <tr *ngIf="todos().length === 0">
           <td colspan="5" class="text-center">No data available</td>
         </tr>
-        <tr *ngFor="let todo of todos; let i = index">
+        <tr *ngFor="let todo of todos(); let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ todo.title }}</td>
           <td>{{ todo.description }}</td>

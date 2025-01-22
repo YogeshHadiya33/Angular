@@ -26,7 +26,7 @@ const NavigationItems = [
     id: 'dashboard',
     title: 'Dashboard',
     type: 'item',
-    url: '/dashboard',
+    url: '/admin/dashboard',
     icon: 'feather icon-home',
     classes: 'nav-item'
   },
@@ -34,7 +34,7 @@ const NavigationItems = [
     id: 'todo',
     title: 'Todo (With Auth)',
     type: 'item',
-    url: '/todo',
+    url: '/admin/todo',
     icon: 'feather icon-box',
     classes: 'nav-item'
   },
@@ -48,7 +48,7 @@ const NavigationItems = [
         id: 'ParentChild',
         title: 'Parent Child',
         type: 'item',
-        url: '/parent-child',
+        url: '/admin/parent-child',
         icon: 'feather icon-home',
         classes: 'nav-item'
       },
@@ -56,7 +56,7 @@ const NavigationItems = [
         id: 'Pipes',
         title: 'Pipes',
         type: 'item',
-        url: '/pipes',
+        url: '/admin/pipes',
         icon: 'feather icon-home',
         classes: 'nav-item'
       },
@@ -64,7 +64,15 @@ const NavigationItems = [
         id: 'Directives',
         title: 'Directives',
         type: 'item',
-        url: '/directives',
+        url: '/admin/directives',
+        icon: 'feather icon-home',
+        classes: 'nav-item'
+      },
+      {
+        id: 'Signals',
+        title: 'Signals',
+        type: 'item',
+        url: '/admin/signals',
         icon: 'feather icon-home',
         classes: 'nav-item'
       }

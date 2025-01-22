@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,14 +14,16 @@ import { ToastrModule } from 'ngx-toastr';
   standalone: true,
   imports: [CommonModule, 
     RouterModule, 
-    NgbModule, 
-    TodoFormComponent],
+    NgbModule],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
   providers: [TodoService,NotificationService]
 })
 export class TodoListComponent implements OnInit {
-  todos: TodoList[] = [];
+
+  todos=signal<TodoList[]>([]);
+
+  // todos: TodoList[] = [];
 
   constructor(
     private todoService: TodoService,
@@ -36,7 +38,7 @@ export class TodoListComponent implements OnInit {
   fetchTodos(): void {
     this.todoService.getAllTodos().subscribe({
       next: (data) => {
-        this.todos = data;
+        this.todos.set(data);
       },
       error: (error) => {
         this.notificationService.showError('Error fetching todos');
