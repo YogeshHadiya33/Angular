@@ -70,7 +70,7 @@ export class SignUpComponent {
         error: error => {
           console.error(error);
           this.successMessage = null;
-          this.errorMessage = error.message; // Set the error message to display to the user
+          this.errorMessage = error.error; // Set the error message to display to the user
           this.isSubmitted = false;
         }
       });

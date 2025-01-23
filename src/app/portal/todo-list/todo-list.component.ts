@@ -12,16 +12,16 @@ import { ToastrModule } from 'ngx-toastr';
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule, 
-    RouterModule, 
+  imports: [CommonModule,
+    RouterModule,
     NgbModule],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
-  providers: [TodoService,NotificationService]
+  providers: [TodoService, NotificationService]
 })
 export class TodoListComponent implements OnInit {
 
-  todos=signal<TodoList[]>([]);
+  todos = signal<TodoList[]>([]);
 
   // todos: TodoList[] = [];
 
@@ -29,7 +29,7 @@ export class TodoListComponent implements OnInit {
     private todoService: TodoService,
     private modalService: NgbModal,
     private notificationService: NotificationService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.fetchTodos();

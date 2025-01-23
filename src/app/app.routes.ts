@@ -4,29 +4,33 @@ import { AdminComponent } from './layout/admin/admin.component';
 import { AuthGuard } from './business_logic/guard/auth.guard';
 
 export const routes: Routes = [
-
-    {
-        path: 'admin',
-        component: AdminComponent,
-        children: [
-            {
-                path: '',
-                loadChildren: () => import('./portal/portal.module').then((x) => x.PortalModule)
-            }
-        ]
-    },
-    {
+  {
+    path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    component: GuestComponent,
+    children: [
+      {
         path: '',
-        component: GuestComponent,
-        children: [
-            {
-                path: 'auth',
-                loadChildren: () => import('./authentication/authentication.module').then((x) => x.AuthenticationModule),
-            }
-        ]
-    },
-    {
-        path: '**',
-        redirectTo: 'auth/sign-in'
-    }
+        loadChildren: () => import('./authentication/authentication.module').then((x) => x.AuthenticationModule)
+      }
+    ]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./portal/portal.module').then((x) => x.PortalModule)
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'auth/sign-in'
+  }
 ];

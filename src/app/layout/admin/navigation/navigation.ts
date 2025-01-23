@@ -75,6 +75,14 @@ const NavigationItems = [
         url: '/admin/signals',
         icon: 'feather icon-home',
         classes: 'nav-item'
+      },
+      {
+        id: 'ChatHub',
+        title: 'Chat Hub',
+        type: 'item',
+        url: '/admin/chat-hub',
+        icon: 'feather icon-home',
+        classes: 'nav-item'
       }
     ]
   },

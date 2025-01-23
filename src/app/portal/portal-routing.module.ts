@@ -38,6 +38,10 @@ const routes: Routes = [
         loadComponent: () => import('./signals/signals.component').then((m) => m.SignalsComponent),
       },
       {
+        path: 'chat-hub',
+        loadComponent: () => import('./chat-hub/chat-hub.component').then((m) => m.ChatHubComponent),
+      },
+      {
         path: "**",
         loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent)
       }

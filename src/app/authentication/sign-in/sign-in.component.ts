@@ -55,7 +55,7 @@ export class SignInComponent {
         },
         error: error => {
           console.error(error);
-          this.errorMessage = error.message; // Set the error message to display to the user
+          this.errorMessage = error.error; // Set the error message to display to the user
         }
       });
     }

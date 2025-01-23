@@ -1,17 +1,17 @@
-export class TodoList {
+export interface TodoList {
     id: number | undefined;
-    title: string='';
-    description: string='';
-    isCompleted: boolean=false 
+    title: string;
+    description: string;
+    isCompleted: boolean;
 }
 
-export class CreateTodo {
-    title: string='';
-    description: string='';
+export interface CreateTodo {
+    title: string;
+    description: string;
 }
 
-export class UpdateTodo {
-    title: string='';
-    description: string='';
-    isCompleted: boolean | undefined 
+export interface UpdateTodo {
+    title: string;
+    description: string;
+    isCompleted: boolean | undefined
 }

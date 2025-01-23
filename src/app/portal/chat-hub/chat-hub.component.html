@@ -1,0 +1,25 @@
+<div class="chat-container">
+    <div class="chat-header">
+      <h3>Chat Hub</h3>
+    </div>
+    <div class="username-input-container">
+      <input type="text" [(ngModel)]="username"  placeholder="Enter your username" class="username-input" required />
+      <button *ngIf="!groupName" (click)="createGroup()" class="create-group-button">Create Group</button>
+      <button *ngIf="groupName" (click)="createNewGroup()" class="create-group-button">Create New Group</button>
+    </div>
+    <div *ngIf="groupUrl" class="group-url">
+      Share this link to join the group: <a [href]="groupUrl">{{ groupUrl }}</a>
+    </div>
+    <div class="chat-box" #chatBox>
+      <div *ngFor="let message of messages" class="chat-message">
+        <strong>{{ message.username }}:</strong> {{ message.message }}
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" [(ngModel)]="messageText" placeholder="Enter your message" 
+      class="message-input" required 
+      (keydown.enter)="sendMessage()"
+      />
+      <button (click)="sendMessage()" class="send-button">Send</button>
+    </div>
+  </div>
